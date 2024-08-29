@@ -1,0 +1,19 @@
+unit Delivery.Pedido.Model;
+
+interface
+
+type
+  TPedidoModel = class
+  private
+    FCodigo: Integer;
+    FData: TDateTime;
+    FValorTotal: Currency;
+  public
+    property Codigo: Integer read FCodigo write FCodigo;
+    property Data: TDateTime read FData write FData;
+    property ValorTotal: Currency read FValorTotal write FValorTotal;
+  end;
+
+implementation
+
+end.

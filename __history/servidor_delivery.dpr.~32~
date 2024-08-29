@@ -1,0 +1,42 @@
+program servidor_delivery;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils,
+  System.JSON,
+  Horse,
+  Horse.Jhonson,
+  Delivery.Pedido.Model in 'Models\Delivery.Pedido.Model.pas',
+  Delivery.Cliente.Model in 'Models\Delivery.Cliente.Model.pas',
+  Delivery.Itens.Pedido.Model in 'Models\Delivery.Itens.Pedido.Model.pas',
+  Delivery.Constants in 'Utils\Delivery.Constants.pas',
+  Delivery.Cliente.Controller in 'Controller\Delivery.Cliente.Controller.pas',
+  UnitDatabase in 'DataBase\UnitDatabase.pas';
+
+begin
+
+// Middlewares
+  THorse.Use(Jhonson);
+
+// Controllers
+  THorse.Get('/', procedure(res : THorseResponse)
+  begin
+    res.Send<TJSONObject>(TJSONObject.Create.AddPair('msg:','Servidor Funcionando'));
+  end);
+
+// Inicialização
+  THorse.Listen(3333,
+  procedure
+  begin
+    Writeln('Servidor rodando na porta ' + THorse.Port.ToString);
+  end);
+end.
+
+{
+  https://github.com/cachopaweb
+
+  Video 22:20
+  https://www.youtube.com/watch?v=cnqEhVY13gQ
+}

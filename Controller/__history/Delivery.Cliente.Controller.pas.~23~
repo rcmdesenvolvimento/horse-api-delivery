@@ -1,0 +1,43 @@
+unit Delivery.Cliente.Controller;
+
+interface
+
+uses
+uses
+  System.SysUtils,
+  System.Json,
+  Horse;
+     UnitDatabase,
+     UnitTabela.Helper.Json, Horse;
+
+type
+  TClienteController = class
+    class procedure Router;
+    class procedure GetOne(Req: THorseRequest; Res: THorseResponse);
+  end;
+
+implementation
+
+{ TClienteController }
+
+  uses
+    Delivery.Cliente.Model,
+
+class procedure TClienteController.GetOne(Req: THorseRequest; Res: THorseResponse);
+var
+  Cliente : TClienteModel;
+  Id: Integer;
+begin
+  //if Req.Params.ContainsKey(Id) then
+  //   id := Req.Params.Items['id'].ToInteger;
+
+  Cliente := TClienteModel.Create(TDatabase.Connection);
+
+end;
+
+class procedure TClienteController.Router;
+begin
+  THorse.Get('/cliente/:id', GetOne);
+end;
+
+end.

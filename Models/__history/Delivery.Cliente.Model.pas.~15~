@@ -1,0 +1,29 @@
+unit Delivery.Cliente.Model;
+
+interface
+uses
+  UnitPortalORM.Model;
+type
+ [TNomeTabela('CLIENTE','CLI_CODIGO')]
+ TClienteModel = class
+  private
+    FCodigo: Integer;
+    FNomeCliente: string;
+    FEnderecoCliente: string;
+    FBairroCliente: string;
+  published
+    [TCampo('CLI_CODIGO','INTEGER NOT NULL PRIMARY KEY')]
+    property Codigo: Integer read FCodigo write FCodigo;
+
+    [TCampo('CLI_NOME','VARCHAR(90)')]
+    property NomeCliente: string read FNomeCliente write FNomeCliente;
+
+    [TCampo('CLI_ENDERECO','VARCHAR(50)')]
+    property EnderecoCliente: string read FEnderecoCliente write FEnderecoCliente;
+
+    property BairroCliente: string read FBairroCliente write FBairroCliente;
+end;
+
+implementation
+
+end.

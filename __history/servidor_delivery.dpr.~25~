@@ -1,0 +1,29 @@
+program servidor_delivery;
+
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils,
+  System.JSON,
+  Horse,
+  Horse.Jhonson;
+
+begin
+
+// Middlewares
+  THorse.Use(Jhonson);
+
+// Controllers
+  THorse.Get('/', procedure(res : THorseResponse)
+  begin
+    res.Send<TJSONObject>(TJSONObject.Create.AddPair('msg:','Servidor Funcionando'));
+  end);
+
+// Inicialização
+  THorse.Listen(3333,
+  procedure
+  begin
+    Writeln('Servidor rodando na porta ' + THorse.Port.ToString);
+  end);
+end.

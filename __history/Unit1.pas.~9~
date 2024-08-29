@@ -1,0 +1,25 @@
+unit Unit1;
+
+interface
+
+type
+  TPedidoModel = class
+  private
+    FCodigo: Integer;
+    FData: TDateTime;
+  published
+    property Codigo: Integer read FCodigo write FCodigo;
+    property Data: TDateTime read FData write FData;
+    property ValorTotal: Currency read FValorTotal write FValorTotal;
+  end;
+
+implementation
+
+end.
+
+
+{
+     property NomeCliente: string read FNomeCliente write FNomeCliente;
+    property EnderecoCliente: string read FEnderecoCliente write FEnderecoCliente;
+    property BairroCliente: string read FBairroCliente write FBairroCliente;
+}

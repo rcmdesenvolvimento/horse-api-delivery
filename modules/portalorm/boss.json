@@ -1,0 +1,12 @@
+{
+	"name": "PortalORM",
+	"description": "",
+	"version": "1.0.0",
+	"homepage": "",
+	"mainsrc": "./src",
+	"projects": [],
+	"dependencies": {
+		"https://github.com/cachopaweb/clientrest": "^1.0.3",
+		"https://github.com/cachopaweb/factory-connections": "^v1.0.3"
+	}
+}

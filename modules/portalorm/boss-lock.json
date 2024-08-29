@@ -1,0 +1,22 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2023-02-08T11:18:10.1332897-04:00",
+	"installedModules": {
+		"https://github.com/cachopaweb/clientrest": {
+			"name": "clientrest",
+			"version": "1.0.3",
+			"hash": "f47c4c669715b2114f20ff0685dc72e9",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/cachopaweb/factory-connections": {
+			"name": "factory-connections",
+			"version": "v1.0.3",
+			"hash": "dd2506e1ff0fd0b4e07f0347972f12f6",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}

@@ -1,0 +1,22 @@
+unit Delivery.Pedido.Model;
+
+interface
+uses
+  UnitPortalORM.Model;
+
+type
+  [TNomeTabela('ITENS_PEDIDOS','PED_CODIGO')]
+  TPedidoModel = class
+  private
+    FCodigo: Integer;
+    FData: TDateTime;
+    FValorTotal: Currency;
+  published
+    property Codigo: Integer read FCodigo write FCodigo;
+    property Data: TDateTime read FData write FData;
+    property ValorTotal: Currency read FValorTotal write FValorTotal;
+  end;
+
+implementation
+
+end.
